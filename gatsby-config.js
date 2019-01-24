@@ -44,7 +44,16 @@ module.exports = {
         fieldName: 'rickAndMorty',
         url: 'https://rickandmortyapi-gql.now.sh/'
       }
-    }
+    },
+    `gatsby-plugin-typescript`,
+    {
+      resolve: `gatsby-plugin-typescript`,
+      options: {
+        isTSX: true,
+        allExtensions: true
+      }
+    },
+    `gatsby-plugin-tslint`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',

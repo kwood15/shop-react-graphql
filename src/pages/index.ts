@@ -4,6 +4,8 @@ import Layout from '../components/layout';
 import Image from '../components/image';
 import SEO from '../components/seo';
 
+const test: string = 'test';
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
@@ -16,6 +18,7 @@ const IndexPage = () => (
       }}
     >
       <Image />
+      {test}
     </div>
     <Link to="/page-2/"> Go to page 2 </Link>
   </Layout>
