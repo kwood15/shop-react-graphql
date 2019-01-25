@@ -1,9 +1,24 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FunctionComponent } from 'react';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
+interface ISEOProps {
+  title: string;
+  description?: string;
+  lang?: string;
+  meta: {
+    name: string;
+    content: string;
+  }[];
+  keywords: string[];
+}
 
-function SEO({ description, lang, meta, keywords, title }) {
+const SEO: FunctionComponent<ISEOProps> = ({
+  title,
+  description,
+  lang = 'en',
+  meta = [],
+  keywords
+}) => {
   return (
     <StaticQuery
       query={detailsQuery}
@@ -12,9 +27,7 @@ function SEO({ description, lang, meta, keywords, title }) {
           description || data.site.siteMetadata.description;
         return (
           <Helmet
-            htmlAttributes={{
-              lang
-            }}
+            htmlAttributes={{ lang }}
             title={title}
             titleTemplate={`%s | ${data.site.siteMetadata.title}`}
             meta={[
@@ -65,20 +78,6 @@ function SEO({ description, lang, meta, keywords, title }) {
       }}
     />
   );
-}
-
-SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  keywords: []
-};
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.array,
-  keywords: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string.isRequired
 };
 
 export default SEO;

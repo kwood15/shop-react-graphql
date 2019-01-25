@@ -11,7 +11,7 @@ class AboutPage extends Component {
 
     return (
       <Layout>
-        <SEO title="About Us" />
+        <SEO title="About Us" keywords={[`about us`, `application`, `react`]} />
         <h1>{character.name} With His Pupper</h1>
         <p>Rick & Morty API data loads at build time.</p>
         <div>

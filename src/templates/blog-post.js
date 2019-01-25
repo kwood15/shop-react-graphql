@@ -7,7 +7,10 @@ const Template = ({ data }) => {
   const post = data.markdownRemark;
   return (
     <Layout>
-      <SEO title={post.frontmatter.title} />
+      <SEO
+        title={post.frontmatter.title}
+        keywords={[`${post.frontmatter.title}`, `application`, `react`]}
+      />
       <Link to="/blog">Back</Link>
       <h1>{post.frontmatter.title}</h1>
       <h3>

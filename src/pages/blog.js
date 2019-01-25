@@ -5,7 +5,7 @@ import SEO from '../components/seo';
 
 const BlogPage = ({ data }) => (
   <Layout>
-    <SEO title="Latest Posts" />
+    <SEO title="Latest Posts" keywords={[`blog`, `application`, `react`]} />
     <h1>Latest Posts</h1>
     {data.allMarkdownRemark.edges.map(post => (
       <div key={post.node.id}>
